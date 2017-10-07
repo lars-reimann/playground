@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT tower (name, price, weapon, upgrades)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT weapon (damage, range, timePerShoot)>
+<!ELEMENT upgrades (upgrade)*>
+<!ELEMENT damage (#PCDATA)>
+<!ELEMENT range (#PCDATA)>
+<!ELEMENT timePerShoot (#PCDATA)>
+<!ELEMENT upgrade (price, newDamage, newRange, newTimePerShoot)>
+<!ELEMENT newDamage (#PCDATA)>
+<!ELEMENT newRange (#PCDATA)>
+<!ELEMENT newTimePerShoot (#PCDATA)>

@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=color\ x\ y
+comment0.target=King(int,\ int,\ int)
+comment0.text=\n\ Konstruiert\ einen\ neuen\ Koenig\ mit\ vorgegebener\ Farbe\ und\ Position\ auf\n\ dem\ Spielfeld.\n\ \n\ @param\ color\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ Farbe\ der\ Figur\ (weiss/schwarz).\n\ @param\ x\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ x-Position\ der\ Figur\ auf\ dem\ Schachbrett.\n\ @param\ y\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ y-Position\ der\ Figur\ auf\ dem\ Schachbrett.\n
+comment1.params=fieldsCopy
+comment1.target=boolean\ canBeatKing(Field[][])
+comment2.params=
+comment2.target=boolean\ hasMoved()
+comment3.params=fields
+comment3.target=void\ markMoves(Field[][])
+comment4.params=hasMoved
+comment4.target=void\ setHasMoved(boolean)
+comment5.params=end\ fields
+comment5.target=Field[][]\ simulateMove(java.awt.Point,\ Field[][])
+comment6.params=fields\ x\ y
+comment6.target=void\ markMove(Field[][],\ int,\ int)
+comment7.params=fieldsCopy\ x\ y
+comment7.target=boolean\ canBeatKing(Field[][],\ int,\ int)
+comment8.params=fields
+comment8.target=void\ unmarkCastling(Field[][])
+numComments=9

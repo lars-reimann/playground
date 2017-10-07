@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Testing DOM Ops</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <script>
+    const start = performance.now()
+    var template = document.getElementById('el')
+    const body = document.getElementsByTagName('body')[0]
+    const parser = new DOMParser()
+    const frag = document.createDocumentFragment()
+    for (let i = 0; i < 10000; i++) {
+      var table = document.createElement('table');
+      table.id = "mycostumdiv"
+      var tr = document.createElement('tr');
+      
+      [1,2].forEach(n => {
+        const td = document.createElement('td')
+        td.textContent = n
+        tr.append(td)
+      })
+      table.append(tr)
+      frag.append(table)
+    }
+    body.append(frag)
+    const end = performance.now()
+    console.log(end - start)
+
+    // template
+    // var div = template.content.cloneNode(true)
+    //   body.appendChild(div);
+
+    // jquery
+    // var elements = "<div><table><tr><td>1</td><td>2</td></tr></table></div>";
+    //   $("body").append($(elements));
+
+    // inner
+    //   var elements = "<div><table><tr><td>1</td><td>2</td></tr></table></div>";
+    //   var div = document.createElement('div')
+    //   div.id = 'mycustomdiv'
+    //   document.getElementsByTagName('body')[0].appendChild(div);
+    //   div.innerHTML = elements;
+  </script>
+</body>
+</html>

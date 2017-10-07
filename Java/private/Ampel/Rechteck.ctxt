@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Rechteck()
+comment0.text=\nErzeuge\ ein\ neues\ Rechteck\ mit\ einer\ Standardfarbe\ an\ einer\nStandardposition.\n\n
+comment1.target=void\ sichtbarMachen()
+comment1.text=\nMache\ dieses\ Rechteck\ sichtbar.\ Wenn\ es\ bereits\ sichtbar\ ist,\ tue\nnichts.\n\n
+comment2.target=void\ unsichtbarMachen()
+comment2.text=\nMache\ dieses\ Rechteck\ unsichtbar.\ Wenn\ es\ bereits\ unsichtbar\ ist,\ tue\nnichts.\n\n
+comment3.params=entfernung
+comment3.target=void\ horizontalBewegen(int)
+comment3.text=\nBewege\ dieses\ Rechteck\ horizontal\ um\ 'entfernung'\ Bildschirmpunkte.\n\n
+comment4.params=entfernung
+comment4.target=void\ vertikalBewegen(int)
+comment4.text=\nBewege\ dieses\ Rechteck\ vertikal\ um\ 'entfernung'\ Bildschirmpunkte.\n\n
+comment5.params=neueHoehe
+comment5.target=void\ hoeheAendern(int)
+comment5.text=\nAendere\ die\ Hoehe\ dieses\ Rechtecks\ in\ 'neueHoehe'.\n'neueHoehe'\ muss\ groesser\ gleich\ Null\ sein.\n\n
+comment6.params=neueBreite
+comment6.target=void\ breiteAendern(int)
+comment6.text=\nAendere\ die\ Breite\ dieses\ Rechtecks\ in\ 'neueBreite'.\n'neueBreite'\ muss\ groesser\ gleich\ Null\ sein.\n\n
+comment7.params=neueFarbe
+comment7.target=void\ farbeAendern(String)
+comment7.text=\nAendere\ die\ Farbe\ dieses\ Rechtecks\ in\ 'neueFarbe'.\nGueltige\ Angaben\ sind\ "rot",\ "gelb",\ "blau",\ "gruen",\n"lila"\ und\ "schwarz".\n\n
+comment8.target=void\ zeichnen()
+comment8.text=Zeichne\ dieses\ Rechteck\ mit\ seinen\ aktuellen\ Werten\ auf\ den\ Bildschirm.\n\n
+comment9.target=void\ loeschen()
+comment9.text=Loesche\ dieses\ Rechteck\ vom\ Bildschirm.\n\n
+numComments=10

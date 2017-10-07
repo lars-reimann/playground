@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=nextWord\ settings\ stat\ test\ textField\ guy\ letters\ word
+comment0.target=HangmanPanel(javax.swing.JButton,\ javax.swing.JButton,\ javax.swing.JButton,\ javax.swing.JButton,\ javax.swing.JTextField,\ HangmanGuyDisplay,\ HangmanLettersDisplay,\ HangmanWordDisplay)
+comment0.text=\n\ Konstruiert\ eine\ neue\ Instanz\ dieser\ Klasse\ indem\ die\ &uuml;bergebenen\n\ Dialogelemente\ im\ Panel\ platziert\ werden.\ Den\ Buttons\ und\ dem\ Textfeld\n\ werden\ die\ passende\ Gr&ouml;&szlig;\ und\ Position\ sowie\ einige\ weitere\n\ Dinge\ zugewiesen,\ w&auml;hrend\ sich\ die\ selbstdefinierten\ Dialogelemente\n\ selbst\ um\ ihrer\ Ausrichtung\ und\ Einstellung\ k&uuml;mmern.\n\ \n\ @param\ nextWord\n\ \ \ \ \ \ \ \ \ \ \ \ Der\ Button\ f&uuml;r\ das\ n&auml;chste\ Wort.\n\ @param\ settings\n\ \ \ \ \ \ \ \ \ \ \ \ Der\ Button\ f&uuml;r\ die\ Einstellungen.\n\ @param\ stat\n\ \ \ \ \ \ \ \ \ \ \ \ Der\ Button\ f&uuml;r\ die\ Statistik.\n\ @param\ test\n\ \ \ \ \ \ \ \ \ \ \ \ Der\ Button\ f&uuml;r\ das\ Testen\ des/der\ Buchstaben.\n\ @param\ textField\n\ \ \ \ \ \ \ \ \ \ \ \ Das\ Textfeld\ zur\ Eingabe.\n\ @param\ guy\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ Spielstandsanzeige.\n\ @param\ letters\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ Buchstabenliste.\n\ @param\ word\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ Wortanzeige.\n
+comment1.params=graphics
+comment1.target=void\ paintComponent(java.awt.Graphics)
+numComments=2

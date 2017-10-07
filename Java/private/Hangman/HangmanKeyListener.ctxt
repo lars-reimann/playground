@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=logic
+comment0.target=HangmanKeyListener(HangmanLogic)
+comment0.text=\n\ Setzt\ die\ Variable\ f&uuml;r\ die\ Spiellogik\ auf\ den\ &uuml;bergebenen\ Wert.\n\ \n\ @param\ logic\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ Instanz\ der\ Spiellogik.\n
+comment1.params=event
+comment1.target=void\ keyPressed(java.awt.event.KeyEvent)
+numComments=2

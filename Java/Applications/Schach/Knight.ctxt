@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.params=color\ x\ y
+comment0.target=Knight(int,\ int,\ int)
+comment0.text=\n\ Konstruiert\ einen\ neuen\ Springer\ mit\ vorgegebener\ Farbe\ und\ Position\ auf\n\ dem\ Spielfeld.\n\ \n\ @param\ color\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ Farbe\ der\ Figur\ (weiss/schwarz).\n\ @param\ x\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ x-Position\ der\ Figur\ auf\ dem\ Schachbrett.\n\ @param\ y\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ y-Position\ der\ Figur\ auf\ dem\ Schachbrett.\n
+comment1.params=fieldsCopy
+comment1.target=boolean\ canBeatKing(Field[][])
+comment2.params=fields
+comment2.target=void\ markMoves(Field[][])
+comment3.params=fields\ x\ y
+comment3.target=void\ markMove(Field[][],\ int,\ int)
+comment3.text=\n\ \n\ @param\ x\n\ @param\ y\n
+comment4.params=fields\ x\ y
+comment4.target=boolean\ canBeatKing(Field[][],\ int,\ int)
+comment4.text=\n\ \n\ @param\ fields\n\ @param\ x\n\ @param\ y\n\ @return\n
+numComments=5

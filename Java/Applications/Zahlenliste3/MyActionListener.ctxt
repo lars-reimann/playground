@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=intArrayGUI
+comment0.target=MyActionListener(IntArrayGUI)
+comment0.text=\n\ Der\ Konstruktor\ fuer\ MyActionListener-Objekte.\n\n\ @param\ intArrayGUI\ Die\ Instanz\ der\ Klasse\ IntArrayGUI.\n
+comment1.params=event
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment1.text=\n\ Reagiere\ auf\ Events\!\n\n\ @param\ event\ Das\ Event,\ das\ sich\ ereignet\ hat.\n
+numComments=2

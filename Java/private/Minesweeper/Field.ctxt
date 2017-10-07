@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=neighbours\ isBomb
+comment0.target=Field(int,\ boolean)
+comment0.text=\n\ Konstruiert\ ein\ neues\ Feld\ mit\ der\ angegebenen\ Zahl\ an\ Bomben\ in\ der\ Umgebung.\ Au&szlig;erdem\n\ ist\ anzugeben,\ ob\ auf\ diesem\ Feld\ selbst\ eine\ Bombe\ liegt.\n\ \n\ @param\ neighbours\ Die\ Anzahl\ der\ Bomben\ in\ der\ Umgebung.\n\ @partam\ isBomb\ Ob\ das\ Feld\ selbst\ eine\ Bombe\ hat.\n
+comment1.params=
+comment1.target=boolean\ isBomb()
+comment1.text=\n\ Gibt\ an,\ ob\ das\ Feld\ eine\ Bombe\ besitzt.\n\ \n\ @return\ Ob\ das\ Feld\ eine\ Bombe\ hat.\n
+comment2.params=
+comment2.target=boolean\ isMarked()
+comment2.text=\n\ Gibt\ an,\ ob\ das\ Feld\ markiert\ worden\ ist,\ also\ ob\ eine\ "Vorsicht\ Bombe"-Warnung\ auf\ diesem\ Feld\n\ platziert\ worden\ ist.\n\ \n\ @return\ Ob\ das\ Feld\ markiert\ worden\ ist.\n
+comment3.params=
+comment3.target=boolean\ isSelected()
+comment4.params=
+comment4.target=int\ getNeighbours()
+comment5.params=
+comment5.target=void\ select()
+comment6.params=
+comment6.target=boolean\ mark()
+numComments=7

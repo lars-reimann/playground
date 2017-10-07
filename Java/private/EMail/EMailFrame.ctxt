@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=tree\ main
+comment0.target=EMailFrame(javax.swing.tree.TreeNode,\ Main)
+comment1.params=tree
+comment1.target=void\ setFolders(javax.swing.tree.TreeNode)
+comment2.params=text
+comment2.target=void\ setMail(java.lang.String)
+numComments=3

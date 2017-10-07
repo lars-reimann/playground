@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<!DOCTYPE creep SYSTEM "creepDTD.dtd">
+
+<creep>
+	<name>creep1</name>
+	<hitpoints>100</hitpoints>
+	<timePerStep>5</timePerStep>
+	<gain>10</gain>
+</creep>

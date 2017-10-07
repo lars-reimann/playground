@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=mail
+comment0.target=Mail(java.lang.String)
+comment1.params=from\ to\ time\ subject\ text
+comment1.target=Mail(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getFrom()
+comment3.params=
+comment3.target=java.lang.String\ getSubject()
+comment4.params=
+comment4.target=java.lang.String\ getText()
+comment5.params=
+comment5.target=java.lang.String\ getTime()
+comment6.params=
+comment6.target=java.lang.String\ getTo()
+numComments=7

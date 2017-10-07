@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=panel
+comment0.target=HangmanFrame(HangmanPanel)
+comment0.text=\n\ Konstruiert\ eine\ neue\ Instanz\ dieser\ Klasse\ und\ zeigt\ das\ &uuml;bergebene\n\ Panel\ im\ Frame\ an.\ Die\ Gr&ouml;&szlig;e\ des\ Frames\ richtet\ sich\ nach\ der\n\ gew&uuml;nschten\ Gr&ouml;&szlig;e\ des\ Panel.\n
+numComments=1

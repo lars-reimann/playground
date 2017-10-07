@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\n\ Startet\ den\ Minesweeper-Server.\n\ \n\ @param\ args\ Der\ Standardparameter\ der\ main-Methode.\ Er\ hat\ hier\ keine\ weitere\ Funktion.\n
+numComments=1

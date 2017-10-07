@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=size
+comment0.target=Board(int)
+comment1.params=graphics
+comment1.target=void\ paint(java.awt.Graphics)
+comment2.params=size
+comment2.target=void\ setSize(int)
+comment3.params=
+comment3.target=void\ run()
+comment4.params=row
+comment4.target=boolean\ solveRow(int)
+comment5.params=column\ row
+comment5.target=boolean\ isCorrect(int,\ int)
+comment6.params=
+comment6.target=boolean\ isSolved()
+numComments=7

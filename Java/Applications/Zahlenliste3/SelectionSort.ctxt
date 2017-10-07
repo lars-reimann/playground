@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ run()
+comment1.params=start\ end
+comment1.target=int\ findMinimum(int,\ int)
+comment1.text=\n\ Sucht\ den\ Index\ eines\ minimalen\ Elementes.\n\n\ @param\ start\ Bei\ diesem\ Index\ wird\ die\ Suche\ begonnen.\n\ @param\ end\ \ \ Vor\ diesem\ Index\ endet\ die\ Suche.\n\ @return\ Index\n
+numComments=2

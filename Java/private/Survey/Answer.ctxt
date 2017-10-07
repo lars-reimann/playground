@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=text
+comment0.target=Answer(java.lang.String)
+comment1.params=
+comment1.target=int\ getCount()
+comment2.params=
+comment2.target=java.lang.String\ getText()
+comment3.params=
+comment3.target=void\ increaseCount()
+numComments=4

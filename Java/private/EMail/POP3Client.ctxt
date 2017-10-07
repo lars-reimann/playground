@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ logout()
+comment1.params=user\ password
+comment1.target=java.lang.String\ login(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=int\ countMails()
+comment3.params=nr
+comment3.target=void\ remove(int)
+comment4.params=
+comment4.target=java.lang.String[]\ receive()
+numComments=5

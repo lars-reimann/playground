@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE monopoly SYSTEM "monopoly.dtd">
+
+<monopoly>
+	<startkapital>1500</startkapital>
+	<werkMultiplikator>4</werkMultiplikator>
+	<bahnhofMiete>25</bahnhofMiete>
+	<felder>
+		<los name="Los">200</los>
+		<strasse name="Badstraße">
+			<gruppe>1</gruppe>
+			<kosten>60</kosten>
+			<hauskosten>50</hauskosten>
+			<miete>
+				<normal>2</normal>
+				<einHaus>10</einHaus>
+				<zweiHaeuser>30</zweiHaeuser>
+				<dreiHaeuser>90</dreiHaeuser>
+				<vierHaeuser>160</vierHaeuser>
+				<hotel>250</hotel>
+			</miete>
+		</strasse>
+		<ereignis name="Gemeinschaftsfeld"/>
+		<strasse name="Turmstraße">
+			<gruppe>1</gruppe>
+			<kosten>60</kosten>
+			<hauskosten>50</hauskosten>
+			<miete>
+				<normal>4</normal>
+				<einHaus>20</einHaus>
+				<zweiHaeuser>60</zweiHaeuser>
+				<dreiHaeuser>180</dreiHaeuser>
+				<vierHaeuser>320</vierHaeuser>
+				<hotel>450</hotel>
+			</miete>
+		</strasse>
+		<steuer name="Einkommenssteuer">200</steuer>
+		<bahnhof name="Südbahnhof">200</bahnhof>
+		<strasse name="Chausseestraße">
+			<gruppe>2</gruppe>
+			<kosten>100</kosten>
+			<hauskosten>50</hauskosten>
+			<miete>
+				<normal>6</normal>
+				<einHaus>30</einHaus>
+				<zweiHaeuser>90</zweiHaeuser>
+				<dreiHaeuser>270</dreiHaeuser>
+				<vierHaeuser>400</vierHaeuser>
+				<hotel>550</hotel>
+			</miete>
+		</strasse>
+		<ereignis name="Ereignisfeld"/>
+		<strasse name="Elisienstraße">
+			<gruppe>2</gruppe>
+			<kosten>100</kosten>
+			<hauskosten>50</hauskosten>
+			<miete>
+				<normal>6</normal>
+				<einHaus>30</einHaus>
+				<zweiHaeuser>90</zweiHaeuser>
+				<dreiHaeuser>270</dreiHaeuser>
+				<vierHaeuser>400</vierHaeuser>
+				<hotel>550</hotel>
+			</miete>
+		</strasse>
+		<strasse name="Poststraße">
+			<gruppe>2</gruppe>
+			<kosten>120</kosten>
+			<hauskosten>50</hauskosten>
+			<miete>
+				<normal>8</normal>
+				<einHaus>40</einHaus>
+				<zweiHaeuser>100</zweiHaeuser>
+				<dreiHaeuser>300</dreiHaeuser>
+				<vierHaeuser>450</vierHaeuser>
+				<hotel>600</hotel>
+			</miete>
+		</strasse>
+		<gefaengnis name="Gefängnis">50</gefaengnis>
+		<strasse name="Seestraße">
+			<gruppe>3</gruppe>
+			<kosten>140</kosten>
+			<miete>
+				<normal>10</normal>
+				<einHaus>50</einHaus>
+				<zweiHaeuser>150</zweiHaeuser>
+				<dreiHaeuser>450</dreiHaeuser>
+				<vierHaeuser>625</vierHaeuser>
+				<hotel>750</hotel>
+			</miete>
+		</strasse>
+		<werk name="Elektrizitätswerk">150</werk>
+		<strasse name="Hafenstraße">
+			<gruppe>3</gruppe>
+			<kosten>140</kosten>
+			<miete>
+				<normal>10</normal>
+				<einHaus>50</einHaus>
+				<zweiHaeuser>150</zweiHaeuser>
+				<dreiHaeuser>450</dreiHaeuser>
+				<vierHaeuser>625</vierHaeuser>
+				<hotel>750</hotel>
+			</miete>
+		</strasse>
+		<strasse name="Neue Straße">
+			<gruppe>3</gruppe>
+			<kosten>160</kosten>
+			<miete>
+				<normal>12</normal>
+				<einHaus>60</einHaus>
+				<zweiHaeuser>180</zweiHaeuser>
+				<dreiHaeuser>500</dreiHaeuser>
+				<vierHaeuser>700</vierHaeuser>
+				<hotel>900</hotel>
+			</miete>
+		</strasse>
+		<bahnhof name="Westbahnhof">200</bahnhof>
+		<strasse name="Münchner Straße">
+			<gruppe>4</gruppe>
+			<kosten>180</kosten>
+			<miete>
+				<normal>14</normal>
+				<einHaus>70</einHaus>
+				<zweiHaeuser>200</zweiHaeuser>
+				<dreiHaeuser>550</dreiHaeuser>
+				<vierHaeuser>750</vierHaeuser>
+				<hotel>950</hotel>
+			</miete>
+		</strasse>
+		<ereignis name="Gemeinschaftsfeld"/>
+		<strasse name="Wiener Straße">
+			<gruppe>4</gruppe>
+			<kosten>180</kosten>
+			<miete>
+				<normal>14</normal>
+				<einHaus>70</einHaus>
+				<zweiHaeuser>200</zweiHaeuser>
+				<dreiHaeuser>550</dreiHaeuser>
+				<vierHaeuser>750</vierHaeuser>
+				<hotel>950</hotel>
+			</miete>
+		</strasse>
+		<strasse name="Berliner Straße">
+			<gruppe>4</gruppe>
+			<kosten>200</kosten>
+			<miete>
+				<normal>16</normal>
+				<einHaus>80</einHaus>
+				<zweiHaeuser>220</zweiHaeuser>
+				<dreiHaeuser>600</dreiHaeuser>
+				<vierHaeuser>800</vierHaeuser>
+				<hotel>1000</hotel>
+			</miete>
+		</strasse>
+		<parken name="Frei Parken"/>
+		<strasse name="Theaterstraße">
+			<gruppe>5</gruppe>
+			<kosten>220</kosten>
+			<miete>
+				<normal>18</normal>
+				<einHaus>90</einHaus>
+				<zweiHaeuser>250</zweiHaeuser>
+				<dreiHaeuser>700</dreiHaeuser>
+				<vierHaeuser>875</vierHaeuser>
+				<hotel>1050</hotel>
+			</miete>
+		</strasse>
+		<ereignis name="Ereignisfeld"/>
+		<strasse name="Museumsstraße">
+			<gruppe>5</gruppe>
+			<kosten>220</kosten>
+			<miete>
+				<normal>18</normal>
+				<einHaus>90</einHaus>
+				<zweiHaeuser>250</zweiHaeuser>
+				<dreiHaeuser>700</dreiHaeuser>
+				<vierHaeuser>875</vierHaeuser>
+				<hotel>1050</hotel>
+			</miete>
+		</strasse>
+		<strasse name="Opernplatz">
+			<gruppe>5</gruppe>
+			<kosten>240</kosten>
+			<miete>
+				<normal>20</normal>
+				<einHaus>100</einHaus>
+				<zweiHaeuser>300</zweiHaeuser>
+				<dreiHaeuser>750</dreiHaeuser>
+				<vierHaeuser>925</vierHaeuser>
+				<hotel>1100</hotel>
+			</miete>
+		</strasse>
+		<bahnhof name="Nordbahnhof">200</bahnhof>
+		<strasse name="Lessingstraße">
+			<gruppe>6</gruppe>
+			<kosten>260</kosten>
+			<miete>
+				<normal>22</normal>
+				<einHaus>110</einHaus>
+				<zweiHaeuser>330</zweiHaeuser>
+				<dreiHaeuser>800</dreiHaeuser>
+				<vierHaeuser>975</vierHaeuser>
+				<hotel>1150</hotel>
+			</miete>
+		</strasse>
+		<strasse name="Schillerstraße">
+			<gruppe>6</gruppe>
+			<kosten>260</kosten>
+			<miete>
+				<normal>22</normal>
+				<einHaus>110</einHaus>
+				<zweiHaeuser>330</zweiHaeuser>
+				<dreiHaeuser>800</dreiHaeuser>
+				<vierHaeuser>975</vierHaeuser>
+				<hotel>1150</hotel>
+			</miete>
+		</strasse>
+		<werk name="Wasserwerk">150</werk>
+		<strasse name="Goethestraße">
+			<gruppe>6</gruppe>
+			<kosten>280</kosten>
+			<miete>
+				<normal>24</normal>
+				<einHaus>120</einHaus>
+				<zweiHaeuser>360</zweiHaeuser>
+				<dreiHaeuser>850</dreiHaeuser>
+				<vierHaeuser>1025</vierHaeuser>
+				<hotel>1200</hotel>
+			</miete>
+		</strasse>
+		<verhaftung name="Gehe ins Gefängnis"/>
+		<strasse name="Rathausplatz">
+			<gruppe>7</gruppe>
+			<kosten>300</kosten>
+			<miete>
+				<normal>26</normal>
+				<einHaus>130</einHaus>
+				<zweiHaeuser>390</zweiHaeuser>
+				<dreiHaeuser>900</dreiHaeuser>
+				<vierHaeuser>1100</vierHaeuser>
+				<hotel>1275</hotel>
+			</miete>
+		</strasse>
+		<strasse name="Hauptstraße">
+			<gruppe>7</gruppe>
+			<kosten>300</kosten>
+			<miete>
+				<normal>26</normal>
+				<einHaus>130</einHaus>
+				<zweiHaeuser>390</zweiHaeuser>
+				<dreiHaeuser>900</dreiHaeuser>
+				<vierHaeuser>1100</vierHaeuser>
+				<hotel>1275</hotel>
+			</miete>
+		</strasse>
+		<ereignis name ="Gemeinschaftsfeld"/>
+		<strasse name="Bahnhofstraße">
+			<gruppe>7</gruppe>
+			<kosten>320</kosten>
+			<miete>
+				<normal>28</normal>
+				<einHaus>150</einHaus>
+				<zweiHaeuser>450</zweiHaeuser>
+				<dreiHaeuser>1000</dreiHaeuser>
+				<vierHaeuser>1200</vierHaeuser>
+				<hotel>1400</hotel>
+			</miete>
+		</strasse>
+		<bahnhof name="Hauptbahnhof">200</bahnhof>
+		<ereignis name="Ereignisfeld"/>
+		<strasse name="Parkstraße">
+			<gruppe>8</gruppe>
+			<kosten>350</kosten>
+			<miete>
+				<normal>35</normal>
+				<einHaus>175</einHaus>
+				<zweiHaeuser>500</zweiHaeuser>
+				<dreiHaeuser>1100</dreiHaeuser>
+				<vierHaeuser>1300</vierHaeuser>
+				<hotel>1500</hotel>
+			</miete>
+		</strasse>
+		<steuer name="Zusatzsteuer">100</steuer>
+		<strasse name="Schlossallee">
+			<gruppe>8</gruppe>
+			<kosten>400</kosten>
+			<miete>
+				<normal>50</normal>
+				<einHaus>200</einHaus>
+				<zweiHaeuser>600</zweiHaeuser>
+				<dreiHaeuser>1400</dreiHaeuser>
+				<vierHaeuser>1700</vierHaeuser>
+				<hotel>2000</hotel>
+			</miete>
+		</strasse>
+	</felder>
+</monopoly>

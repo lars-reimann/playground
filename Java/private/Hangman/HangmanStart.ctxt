@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\n\ Der\ Einstiegspunkt\ in\ das\ Programm.\ Hier\ werden\ alle\ Instanzen\ von\n\ Klassen\ erzeugt,\ die\ von\ mehreren\ Teilen\ des\ Programms\ ben&ouml;tigt\n\ werden.\ Im\ Anschluss\ werden\ sie\ entsprechen\ untereinander\ &uuml;bergeben.\n\ \n\ @param\ args\n\ \ \ \ \ \ \ \ \ \ \ \ Der\ Standardparameter\ dieser\ Methode.\n
+numComments=1

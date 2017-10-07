@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=ErsteZahl\ Operator\ ZweiteZahl
+comment0.target=void\ Grundrechenarten(double,\ String,\ double)
+comment0.text=\nOperator\:\ "+",\ "-",\ "*",\ "/",\ "^"\n\n
+numComments=1

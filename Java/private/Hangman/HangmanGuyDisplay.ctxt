@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HangmanGuyDisplay()
+comment0.text=\n\ Konstruiert\ eine\ neue\ Instanz\ dieser\ Klasse.\ Das\ Array\ der\n\ Hintergrundbilder\ wird\ bef&uuml;llt,\ indem\ die\ betreffenden\ Bilddateien\n\ ausgelesen\ werden.\ Anschlie&szlig;end\ wird\ die\ gew&uuml;nschte\n\ Gr&ouml;&szlig;e\ des\ Panels\ auf\ 300x200\ Pixel\ festgelegt.\n
+comment1.params=graphics
+comment1.target=void\ paint(java.awt.Graphics)
+comment2.params=
+comment2.target=void\ run()
+comment3.params=errorCount
+comment3.target=void\ setErrorCount(int)
+comment3.text=\n\ Setzt\ die\ Anzahl\ der\ bisher\ gemachten\ Fehler,\ also\ der\ falschen\n\ Buchstaben\ auf\ den\ &uuml;bergebenen\ Wert.\ Anhand\ dieses\ Wertes\ wird\ dann\n\ das\ passende\ Bild\ gezeichnet,\ welches\ den\ Spieler\ &uuml;ber\ den\ aktuellen\n\ Spielstand\ informiert.\n\ \n\ @param\ errorCount\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ neue\ Anzahl\ der\ bisher\ gemachten\ Fehler.\n
+comment4.params=isWon
+comment4.target=void\ setWon(boolean)
+comment4.text=\n\ Setzt\ die\ Flag,\ die\ zeigt\ ob\ das\ Spiel\ gewonnen\ oder\ verloren\ wurde,\ auf\n\ den\ &uuml;bergebenen\ Wert.\n\ \n\ @param\ isWon\n\ \ \ \ \ \ \ \ \ \ \ \ Gibt\ an,\ ob\ das\ Spiel\ gewonnen\ ist\ (true)\ oder\ verloren\n\ \ \ \ \ \ \ \ \ \ \ \ (false).\n
+numComments=5

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=logic
+comment0.target=HangmanActionListener(HangmanLogic)
+comment0.text=\n\ Konstruiert\ eine\ neue\ Instanz\ dieser\ Klasse\ und\ weist\ der\ Variablen,\ die\n\ die\ Spiellogik\ enth&auml;lt,\ den\ &uuml;bergebenen\ Parameter\ zu.\n\ \n\ @param\ logic\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ Instanz\ der\ Spiellogik.\n
+comment1.params=event
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=2

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=zahlenliste
+comment0.target=Screen(int[])
+comment0.text=\n\ Konstruktor\ fuer\ Objekte\ der\ Klasse\ MyCanvas.\ Die\ Zeichnung\ erscheint\ in\n\ einer\ Flaeche\ von\ 450\ x\ 220\!\n\n\ @param\ zahlenliste\ Die\ Zahlenliste,\ die\ angezeigt\ werden\ soll\!\n
+comment1.params=graphics
+comment1.target=void\ paint(java.awt.Graphics)
+comment1.text=\n\ Das\ Balkendiagramm\ wird\ gezeichnet\ und\ beschriftet.\n\n\ @param\ graphics\ Der\ Grafikkontext\ dieses\ Elements.\n
+comment2.params=index1\ index2
+comment2.target=void\ paint(int,\ int)
+comment3.params=graphics
+comment3.target=void\ update(java.awt.Graphics)
+comment3.text=\n\ Zeichnet\ die\ Balken\ erneut.\n\n\ @param\ graphics\ Der\ Grafikkontext\ dieses\ Elements.\n
+numComments=4

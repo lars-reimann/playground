@@ -1,0 +1,8 @@
+MIDlet-1: Start,,Start
+MIDlet-Jar-Size: 4587
+MIDlet-Jar-URL: Quadratische_Gleichungen.jar
+MIDlet-Name: Quadratische Gleichungen MIDlet Suite
+MIDlet-Vendor: MIDlet Suite Vendor
+MIDlet-Version: 1.0.0
+MicroEdition-Configuration: CLDC-1.0
+MicroEdition-Profile: MIDP-2.1

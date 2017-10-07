@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.util.ArrayList[]\ readFiles()
+comment0.text=\n\ Liest\ den\ Inhalt\ der\ Textdateien\ (Spielst&auml;nde\ und\ W&ouml;rter)\ im\ Ordner\ "words"\ aus\ und\ gibt\ ihn\ zur&uuml;ck.\n\ \n\ @return\ Den\ Inhalt\ der\ Textdateien.\n
+comment1.params=
+comment1.target=int\ countFiles()
+comment1.text=\n\ Gibt\ die\ Anzahl\ der\ Dateien\ im\ Ordner\ "words"\ zur&uuml;ck.\n\ \n\ @return\ Die\ Anzahl\ der\ Dateien\ im\ Ordner\ "words.\n
+comment2.params=index
+comment2.target=java.util.ArrayList\ readFile(int)
+comment2.text=\n\ Liest\ die\ Spielst&auml;nde\ und\ die\ W&ouml;rter\ in\ der\ Textdatei\ "index.txt"\ aus\ und\ speichert\ sie\n\ entsprechend.\ "index"\ steht\ hierbei\ f&uuml;r\ den\ Dateinamen,\ welche\ von\ null\ bis\ countFiles()\ -\ 1\n\ durchnummeriert\ sind.\n\ \n\ @param\ index\ Der\ Dateiname\ der\ Textdatei.\n\ @return\ Den\ Inhalt\ der\ Textdatei,\ also\ die\ Spielst&auml;nde\ und\ die\ W&ouml;rter.\n
+comment3.params=categories\ scores\ wordLists
+comment3.target=void\ writeFiles(java.lang.String[],\ int[][],\ java.util.ArrayList[])
+comment3.text=\n\ Schreibt\ die\ neuen\ Spielst&auml;de\ und\ die\ modifizierten\ Wortlisten\ in\ die\ entsprechenden\ Textdateien\ im\n\ Ordner\ "words".\n\ \n\ @param\ categories\ Die\ Namen\ der\ Kategorien\ bzw.\ Wortfelder.\n\ @param\ scores\ Die\ neuen\ Spielst&auml;nde.\n\ @param\ wordLists\ Die\ Wortlisten\ der\ einzelnen\ Kategorien.\n
+comment4.params=category\ score\ wordList\ index
+comment4.target=void\ writeFile(java.lang.String,\ int[],\ java.util.ArrayList,\ int)
+comment4.text=\n\ Schreibt\ die\ neuen\ Spielst&auml;nde\ und\ die\ modifizierte\ Wortliste\ in\ die\ Textdatei\ "index.txt"\ im\ Ordner\ "words".\n\ \n\ @param\ category\ Der\ Name\ der\ Kategorie\ bzw.\ des\ Wortfeldes.\n\ @param\ score\ Der\ neue\ Spielstand\ in\ dieser\ Kategorie.\n\ @param\ wordLists\ Die\ modifizierte\ Wortliste\ dieser\ Kategorie.\n\ @param\ index\ Der\ Name\ der\ Textdatei.\n
+numComments=5

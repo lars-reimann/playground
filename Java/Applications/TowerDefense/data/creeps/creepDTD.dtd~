@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT creep (name, hitpoints, timePerStep, gain)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT hitpoints (#PCDATA)>
+<!ELEMENT timePerStep (#PCDATA)>
+<!ELEMENT gain (#PCDATA)>

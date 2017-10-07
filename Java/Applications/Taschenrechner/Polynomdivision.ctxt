@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=a5\ a4\ a3\ a2\ a1\ a0\ b2\ b1\ b0
+comment0.target=void\ Polynomdivision(double,\ double,\ double,\ double,\ double,\ double,\ double,\ double,\ double)
+comment0.text=\nForm\:\ (a5x^5\ +\ a4x^4\ +\ a3x\u00B3\ +\ a2x\u00B2\ +\ a1x\ +\ a0)\ /\ (b2x\u00B2\ +\ b1x\ +\ b0)\n\n
+numComments=1

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tower SYSTEM "towerDTD.dtd">
+
+<tower>
+	<name>turm2</name>
+	<price>100</price>
+	<weapon>
+		<damage>50</damage>
+		<range>50</range>
+		<timePerShoot>3</timePerShoot>
+	</weapon>
+	<upgrades>
+		<upgrade>
+			<price>100</price>
+			<newDamage>60</newDamage>
+			<newRange>60</newRange>
+			<newTimePerShoot>3</newTimePerShoot>
+		</upgrade>
+		<upgrade>
+			<price>200</price>
+			<newDamage>70</newDamage>
+			<newRange>70</newRange>
+			<newTimePerShoot>2</newTimePerShoot>
+		</upgrade>
+		<upgrade>
+			<price>300</price>
+			<newDamage>80</newDamage>
+			<newRange>80</newRange>
+			<newTimePerShoot>2</newTimePerShoot>
+		</upgrade>
+		<upgrade>
+			<price>400</price>
+			<newDamage>90</newDamage>
+			<newRange>90</newRange>
+			<newTimePerShoot>1</newTimePerShoot>
+		</upgrade>
+		<upgrade>
+			<price>500</price>
+			<newDamage>100</newDamage>
+			<newRange>100</newRange>
+			<newTimePerShoot>1</newTimePerShoot>
+		</upgrade>
+	</upgrades>
+</tower>

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HangmanLettersDisplay()
+comment0.text=\n\ L&auml;dt\ das\ Hintergrundbild\ in\ die\ daf&uuml;r\ vorgesehene\ Variable\ und\n\ initialisiert\ das\ Array\ von\ Wahrheitswerten,\ welches\ die\ Buchstabenliste\n\ repr&auml;sentiert.\ Au&szlig;erdem\ werden\ die\ Grenzen\ zur\ Anzeige\ im\n\ Panel\ und\ ein\ Tooltip\ gesetzt.\n
+comment1.params=letters
+comment1.target=void\ setLetters(boolean[])
+comment1.text=\n\ Setzt\ die\ Buchstabenliste\ auf\ den\ &uuml;bergebenen\ Wert.\n\ \n\ @param\ letters\n\ \ \ \ \ \ \ \ \ \ \ \ Das\ Array\ von\ Wahrheitswerten,\ die\ angibt,\ welche\ Buchstaben\n\ \ \ \ \ \ \ \ \ \ \ \ schon\ verwendet\ wurden\ (false\ \=\ noch\ nicht\ verwendet;\ true\ \=\n\ \ \ \ \ \ \ \ \ \ \ \ schon\ benutzt).\n
+comment2.params=graphics
+comment2.target=void\ paintComponent(java.awt.Graphics)
+numComments=3

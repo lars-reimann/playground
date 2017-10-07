@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HangmanWordDisplay()
+comment0.text=\n\ L&auml;dt\ das\ Hintergrundbild\ und\ initialisiert\ das\ angezeigte\ Wort\ mit\n\ einem\ leeren\ String.\ Des\ Weiteren\ werden\ die\ Grenzen\ f&uuml;r\ die\ Anzeige\n\ im\ Panel\ gesetzt\ und\ ein\ ToolTip\ hinzugef&uuml;gt.\n
+comment1.params=graphics
+comment1.target=void\ paintComponent(java.awt.Graphics)
+comment2.params=shownWord
+comment2.target=void\ setShownWord(java.lang.String)
+comment2.text=\n\ Setzt\ das\ angezeigte\ Wort\ auf\ den\ &uuml;bergebenen\ Wert.\n\ \n\ @param\ shownWord\n\ \ \ \ \ \ \ \ \ \ \ \ Das\ anzuzeigende\ Wort.\n
+numComments=3

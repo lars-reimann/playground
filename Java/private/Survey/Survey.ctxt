@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=question\ texts
+comment0.target=Survey(java.lang.String,\ java.lang.String[])
+comment1.params=
+comment1.target=Answer[]\ getAnswers()
+comment2.params=
+comment2.target=java.lang.String\ getQuestion()
+numComments=3

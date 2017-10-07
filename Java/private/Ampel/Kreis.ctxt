@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Kreis()
+comment0.text=\nErzeuge\ einen\ neuen\ Kreis\ an\ einer\ Standardposition\ mit\neiner\ Standardfarbe.\n\n
+comment1.target=void\ sichtbarMachen()
+comment1.text=\nMache\ diesen\ Kreis\ sichtbar.\ Wenn\ es\ bereits\ sichtbar\ ist,\ tue\nnichts.\n\n
+comment2.target=void\ unsichtbarMachen()
+comment2.text=\nMache\ diesen\ Kreis\ unsichtbar.\ Wenn\ es\ bereits\ unsichtbar\ ist,\ tue\nnichts.\n\n
+comment3.params=entfernung
+comment3.target=void\ horizontalBewegen(int)
+comment3.text=\nBewege\ diesen\ Kreis\ horizontal\ um\ 'entfernung'\ Bildschirmpunkte.\n\n
+comment4.params=entfernung
+comment4.target=void\ vertikalBewegen(int)
+comment4.text=\nBewege\ diesen\ Kreis\ vertikal\ um\ 'entfernung'\ Bildschirmpunkte.\n\n
+comment5.params=neuerDurchmesser
+comment5.target=void\ groesseAendern(int)
+comment5.text=\nAendere\ den\ Durchmesser\ dieses\ Kreises\ in\ 'neuerDurchmesser'\n(Angabe\ in\ Bildschirmpunkten).\n'neuerDurchmesser'\ muss\ groesser\ gleich\ Null\ sein.\n\n
+comment6.params=neueFarbe
+comment6.target=void\ farbeAendern(String)
+comment6.text=\nAendere\ die\ Farbe\ dieses\ Kreises\ in\ 'neueFarbe'.\nGueltige\ Angaben\ sind\ "rot",\ "gelb",\ "blau",\ "gruen",\n"lila"\ und\ "schwarz".\n\n
+comment7.target=void\ zeichnen()
+comment7.text=Zeichne\ diesen\ Kreis\ mit\ seinen\ aktuellen\ Werten\ auf\ den\ Bildschirm.\n\n
+comment8.target=void\ loeschen()
+comment8.text=Loesche\ diesen\ Kreis\ vom\ Bildschirm.\n\n
+numComments=9

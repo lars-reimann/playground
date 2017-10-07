@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=millis
+comment0.target=void\ sleep(long)
+comment0.text=\n\ Das\ Programm\ haelt\ fuer\ ein\ bestimmte\ vorgegebene\ Zeit\ an,\ um\ das\n\ Vertauschen\ der\ verschiedenen\ Zufallszahlen\ beim\ Sortieren\ besser\n\ sichtbar\ zu\ machen.\n\n\ @param\ millis\ Zeit\ in\ Millisekunden,\ die\ gewartet\ werden\ soll\n
+comment1.params=index1\ index2
+comment1.target=void\ swap(int,\ int)
+comment1.text=\n\ Tausche\ zwei\ Elemente\ in\ der\ Zahlenliste\!\n\n\ @param\ index1\ Index\ des\ ersten\ Elementes.\n\ @param\ index2\ Index\ des\ zweiten\ Elementes.\n
+numComments=2

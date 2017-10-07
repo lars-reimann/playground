@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=Start\ Ende
+comment0.target=void\ ProgrammStarten(int,\ int)
+comment1.target=void\ Primzahlen()
+comment2.target=void\ Primzahlzwillinge()
+comment3.target=void\ Primzahldrillinge()
+numComments=4

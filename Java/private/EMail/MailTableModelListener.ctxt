@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=main
+comment0.target=MailTableModelListener(Main)
+comment1.params=event
+comment1.target=void\ tableChanged(javax.swing.event.TableModelEvent)
+numComments=2
