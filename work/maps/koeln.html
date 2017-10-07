@@ -1,0 +1,463 @@
+
+<!DOCTYPE html >
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Partnerschaften der Universit&auml;t zu K&ouml;ln</title>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=en"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+
+
+    var customIcons = {
+      0: {
+         icon: 'img/university.png', //Hier ist das Icon für die Marker
+         shadow: null //Um den Schatten müssen wir uns nicht kümmern
+      },
+      1: {
+        icon: 'img/workoffice.png',
+        shadow: null
+      },
+      2: {//wird nicht verwendet
+        icon: 'http://labs.google.com/ridefinder/images/mm_20_red.png',
+        shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
+      }
+    };
+
+    var markerClusterOption = {
+      height: 37, //Höhe und Breite des Icons
+      width: 32,
+      anchor: [18,11], //Die Beschriftung positionieren: erste Zahl y, zweite Zahl x offset von der linken oberen Ecke des Icons.
+                       //Wenn googlemaps nicht zufrieden ist mit den Werten, wird einfach zentriert. Werte ausserhalb des Icons sind
+                       //scheinbar ungültig
+      textColor: 'black', //Die Schriftart für die Zahl
+      url: 'img/university.png' //Das ist das Icon für die Cluster
+    };
+
+
+    //globals
+    var markers = [];
+    var officemarkers = [];
+    var infoWindow;
+    var openWindowMarkerId=null; //Merken, welches Fenster offen ist, falls der zugehörige Marker verschwindet
+    var openRequest=null; //Gibt es eine neue Anfrage, während noch auf eine alte gewartet wird, so wird die alte Anfrage abgebrochen
+    var lastPhpArg=''; //Bezeichnet das php-argument, welches zuletzt vom Server gefragt wurde
+    var map;
+    var markerCluster;
+    var clickTimer=null;
+    var dblclickdelay=250; //eine viertelsekunde auf den doppelclick warten
+    var hoverDisabled = false;
+    var klappen=new Array(); //Die Objekte, die content auf- und zuklappen
+
+    //steht im body unter onload=
+    function load() {
+
+      if (parent!=self)
+         autosize();
+
+      map = new google.maps.Map(document.getElementById("map"), {
+        //center: new google.maps.LatLng(50.523905, 7.042236),
+        center: new google.maps.LatLng(0, 0),
+        zoom: 1,
+        mapTypeId: 'roadmap'
+      });
+      // Create the DIV to hold the control and
+      // call the HomeControl() constructor passing
+      // in this DIV.
+      var homeControlDiv = document.createElement('div');
+      var homeControl = new HomeControl(homeControlDiv, map);
+
+      homeControlDiv.index = 1;
+      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(homeControlDiv);
+      infoWindow = new google.maps.InfoWindow({
+        disableAutoPan: true});
+
+      //Formular zurücksetzen
+      resetForm();
+      createMarkers('?showall=true');
+    }
+
+    function HomeControl(controlDiv, map) {
+      controlDiv.style.padding = '5px';
+
+      // Set CSS for the control border
+      var controlUI = document.createElement('div');
+      controlUI.style.backgroundColor = 'white';
+      controlUI.style.border = '1px solid rgb(113, 123, 135)';
+      controlUI.style.cursor = 'pointer';
+      controlUI.style.textAlign = 'center';
+      controlUI.style.boxShadow = '0px 2px 4px rgba(0, 0, 0, 0.4)';
+      controlUI.style.padding = '1px 6px';
+      controlUI.title = 'Click to set the map to Home';
+      controlDiv.appendChild(controlUI);
+
+      // Set CSS for the control interior
+      var controlText = document.createElement('div');
+      controlText.style.fontFamily = 'Arial,sans-serif';
+      controlText.style.fontSize = '13px';
+      controlText.style.paddingLeft = '4px';
+      controlText.style.paddingRight = '4px';
+      controlText.style.color='#000000';
+      controlText.innerHTML = '<b>Zoom to World</b>';
+      controlUI.appendChild(controlText);
+
+      // Setup the click event listeners: simply set the map to
+      // Chicago
+      google.maps.event.addDomListener(controlUI, 'click', function() {
+        map.setZoom(1);
+        //map.setCenter(new google.maps.LatLng(50.523905, 7.042236));
+        map.setCenter(new google.maps.LatLng(0, 0));
+      });
+    }
+
+    function createMarkers(phpArg)
+    {
+      //phpArg hat sich nicht geändert, also nicht erneut anfragen
+      if (lastPhpArg==phpArg)
+         return;
+      else
+         lastPhpArg=phpArg;
+
+      //Letzten Request verwerfen
+      if (openRequest!=null)
+      {
+         openRequest.onreadystatechange=function(){};
+         openRequest.abort();
+      }
+
+      openRequest = downloadUrl("genxml.php"+phpArg, function(data) {
+        openRequest = null; //ok, der Request ist fertig
+        var xml = data.responseXML;
+        createRelated(xml);
+        if (xml==null)
+        {
+         alert('xml is null:\n'+data.responseText);
+         return;
+        }
+        clearMarkers(); //alle marker von der karte löschen
+        var places = xml.documentElement.getElementsByTagName("place");
+        for (var i = 0; i < places.length; i++) { //für jeden place im xml dokument wird jetzt ein marker erzeugt und auf der karte angezeigt
+          var html = places[i].getAttribute("html");
+          var id=places[i].getAttribute("id");
+          html = html.replace(/&lt;/g,"<");
+          html = html.replace(/&gt;/g,">");
+          var address = places[i].getAttribute("address");
+          var type = places[i].getAttribute("type");
+          var point = new google.maps.LatLng(
+              parseFloat(places[i].getAttribute("lat")),
+              parseFloat(places[i].getAttribute("lng")));
+
+          var icon = customIcons[type] || {};
+          var marker = new google.maps.Marker({
+            map: map,
+            position: point,
+            icon: icon.icon,
+            shadow: icon.shadow,
+            placeId: id //der Marker bekommt die Information, zu welchem place er gehört
+          });
+          if (type==0)
+             markers.push(marker);
+          if (type==1)
+             officemarkers.push(marker);
+          bindInfoWindow(marker, html,id); //hier werden die eventhandler gesetzt
+        }
+
+        //hier wird geclustert
+        markerCluster = new MarkerClusterer(map, markers, {
+               gridSize: 60,
+               styles: new Array(markerClusterOption)
+               });
+
+        //falls ein offenes Fenster existiert hat, und die Marker neu gesetzt werden, muss das Fenster wieder geöffnet werden
+        if (openWindowMarkerId!=null)
+        {
+          var found=false;
+          for (i in markers)
+          {
+            found=false;
+            if (markers[i].placeId==openWindowMarkerId)
+            {
+               infoWindow.open(map, markers[i]);
+               found=true;
+               break;
+            }
+          }
+          if (!found) //der Marker existiert nicht mehr...
+             closeWindow();
+        }
+
+      });
+    }
+
+    //bindInfoWindow setzt alle eventhandler
+    function bindInfoWindow(marker, html,id) {
+
+      //mouseover
+      google.maps.event.addListener(marker, 'mouseover', function() {
+        if (!hoverDisabled) { //öffnet das Fenster beim drüberhovern. sobald ein fenster angeklickt wird, wird die hoverfunktion deaktiviert
+          infoWindow.setContent(html);
+          infoWindow.open(map, marker);
+        }
+      });
+
+      //click
+      google.maps.event.addListener(marker, 'click', function() {
+
+         //ein bisschen warten um zu schauen, ob der click nicht vielleicht doch der erste click eine Doppelclicks war.
+         clickTimoutId=setTimeout( function(){
+           clickTimer=null; //ok, zeit ist abgelaufen, wird haben nur einen klick
+           //fenster öffnen
+           infoWindow.setContent(html);
+           infoWindow.open(map, marker);
+           //detailinfo unter der karte anzeigen
+           getInfo(id, initKlappen);
+           hoverDisabled = true; //ab jetzt wird nicht mehr gehovert
+
+           //falls der marker schon selektiert ist, reinzoomen
+           if (openWindowMarkerId == marker.placeId)
+              zoomMap(marker.getPosition());
+           else //ansonsten die map auf den marker zentrieren ohne zu zoomen
+           {
+              moveMapTo(marker.getPosition());
+              openWindowMarkerId = marker.placeId; //merken, welches Fenster offen ist
+           }
+         }, dblclickdelay);
+      });
+
+      //mouseout
+      google.maps.event.addListener(marker, 'mouseout', function() {
+        //im hovermodus das fenster schliessen
+        if (hoverDisabled==false) {
+          infoWindow.close();
+        }
+      });
+
+      //closeclick
+      google.maps.event.addListener(infoWindow, 'closeclick', closeWindow);
+
+      //doubleclick
+      google.maps.event.addListener(marker, 'dblclick',function(){
+         //bei dopelklick wird der clickhandler abgebrochen
+         if (clickTimoutId!=null)
+            clearTimeout(clickTimoutId);
+
+         //direkt zoomen
+         zoomMap(marker.getPosition());
+
+         //fenster öffnen
+         infoWindow.setContent(html);
+         infoWindow.open(map, marker);
+
+         //details unterhalb der karte anzeigen
+         getInfo(id, initKlappen);
+
+         //hovermodus verlassen
+         hoverDisabled = true;
+
+         //merken, welches Fenster offen ist
+         openWindowMarkerId = marker.placeId;
+      });
+
+    }
+
+
+    //Wird ausgeführt, wenn der Marker des aktuell geöffneten Fensters verloren geht oder der User das Fenster schliesst
+    function closeWindow()
+    {
+        document.getElementById('info').innerHTML = ''; //detailinfos ausblenden
+        hoverDisabled = false; //zurück in den hovermodus wechseln
+        openWindowMarkerId = null; //kein fenster ist angewählt
+        autosize(); //wahrscheinlich hat sich die Fenstergröße geändert
+    }
+
+    //simple ajax funktion wird von createMarkers benutzt
+    function downloadUrl(url, callback) {
+      var request = window.ActiveXObject ?
+          new ActiveXObject('Microsoft.XMLHTTP') :
+          new XMLHttpRequest;
+
+      request.onreadystatechange = function() {
+        if (request.readyState == 4) {
+          request.onreadystatechange = doNothing;
+          callback(request, request.status);
+        }
+      };
+
+      request.open('GET', url, true);
+      request.send(null);
+
+      return request;
+    }
+
+    //löscht alle marker von der Karte und entfernt den Cluster
+    function clearMarkers()
+    {
+      if (markerCluster!=null)
+         markerCluster.clearMarkers();
+      for(i in markers)
+         markers[i].setMap(null);
+      markers.length=0;
+      for(i in officemarkers)
+         officemarkers[i].setMap(null);
+      officemarkers.length=0;
+    }
+
+    function doNothing() {}
+
+    //navigiert sanft zum Zielpunkt
+    function moveMapTo(target)
+    {
+      map.panTo(target);
+    }
+
+    function zoomMap(target)
+    {
+      map.setZoom(15);
+      map.setCenter(target);
+    }
+
+    //immer wenn ein neuer Place selektiert wird, müssen die Klappen initialisiert werden
+    function initKlappen()
+    {
+      //lokale vars
+      var klappe;
+      var pfeil;
+      var content;
+
+      //alte klappen verwerfen
+      klappen.length=0;
+
+      //neue Klappen initialisieren
+      for (i=0;true;i++)
+      {
+         pfeil=document.getElementById('pfeil'+i);
+         content=document.getElementById('content'+i);
+         if (pfeil==null || content==null)
+            break;
+
+         klappe=new Klappe(content, pfeil);
+         klappe.onMotion=autosize; //bei jeder Bewegung wird die größe des iFrames mit verändert
+         klappen.push(klappe); //im globalen array speichern, um per klappenclick(i) auf die richtige klappe drücken zu können
+      }
+      autosize(); //kann nie schaden
+    }
+
+    //man könnte vermutlich auch direkt klappen[i].click() aufrufen, aber diese Funktion bietet mehr Flexibilität (strategy muster)
+    function klappenClick(i)
+    {
+      klappen[i].click();
+    }
+
+    //form zurücksetzten, ohne fehler zu produzieren
+    function resetForm()
+    {
+      var form=document.getElementById('filterform');
+      if (form==null)
+         return;
+      else
+         form.reset();
+    }
+
+
+    //übernommen aus dem originaldokument (keine ahnung was das macht)
+    function createRelated(xml)
+    {
+      var node=document.getElementById('related');
+      if (node==null)
+         return;
+
+      var els=xml.getElementsByTagName('rating');
+      var elements=new Array();
+      for(var i=0;i<els.length;i++)
+         elements.push(els[i]);
+
+      elements.sort(ratingSort);
+      var innerHTML='<table>';
+      for(i=0;i<elements.length;i++)
+      {
+         innerHTML+='<tr>';
+         innerHTML+='<td>'+elements[i].getAttribute("name")+'</td>';
+         innerHTML+='<td>'+elements[i].getAttribute("town")+'</td>';
+         innerHTML+='<td>'+elements[i].getAttribute("country")+'</td>';
+         innerHTML+='<td>'+elements[i].getAttribute("rate")+'</td>';
+         innerHTML+='</tr>';
+      }
+      innerHTML+='</table>';
+      node.innerHTML=innerHTML;
+    }
+
+    //ich bin nicht sicher, ob diese Funktion noch benutzt wird.
+    function ratingSort(a, b)
+    {
+      return (b.getAttribute("rate") - a.getAttribute("rate"));
+    }
+
+    //]]>
+  </script>
+  <script type="text/javascript" src="ajax.js">//Kümmert sich um die Ajaxrequests der Filterfunktion</script>
+  <script type="text/javascript" src="tween.js">//Tweeningklasse für sanfte Bewegung der Karte</script>
+  <script type="text/javascript" src="klappe.js">//Klasse, die einklappen und zuklappen erledigt</script>
+  <script type="text/javascript" src="autosize.js">//stellt die Funktion autosize zur verfügung, die die Höhe des iFrames anpasst</script>
+  <script type="text/javascript" src="browserdetect.js">//Komfortable Möglichkeiten, useragent und version zu testen</script>
+
+  </head>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <body onLoad="load()">
+    <script type="text/javascript" src="http://fc.webmasterpro.de/counter.php?name=partnerkarte"></script>
+    <noscript><div><img src="http://fc.webmasterpro.de/as_noscript.php?name=partnerkarte" style="width:1px;height:1px;" alt="" /></div></noscript>
+    <div id="map"></div>
+    <div id="filter" class="rahmen">
+<form action="javascript:updatemap(document.getElementById('filterform'));" onchange="updatemap(this);" method="GET" id="filterform">
+ <table>
+ <tr>
+  <td>Filter:</td>
+  <td>
+
+   <select name="continent" onchange="updateContinent(document.getElementById('filterform'));updatemap(document.getElementById('filterform'));">
+    <option value="all">All Continents</option>
+    <option value="Africa">Africa</option><option value="Asia">Asia</option><option value="Australia">Australia</option><option value="Europe">Europe</option><option value="North America">North America</option><option value="Oceania">Oceania</option><option value="South America">South America</option>   </select>
+
+
+   <select name="country" onchange="updatemap(document.getElementById('filterform'));">
+    <option value="0" id="allCountries">All Countries</option>
+    <option value="130" class="Europe">Albania</option><option value="37" class="South America">Argentina</option><option value="235" class="Australia">Australia</option><option value="141" class="Europe">Austria</option><option value="16" class="Asia">Azerbaijan</option><option value="183" class="Asia">Bangladesh</option><option value="149" class="Europe">Belgium</option><option value="205" class="Africa">Botswana</option><option value="39" class="South America">Brazil</option><option value="10" class="Europe">Bulgaria</option><option value="122" class="Africa">Cameroon</option><option value="53" class="North America">Canada</option><option value="40" class="South America">Chile</option><option value="186" class="Asia">China</option><option value="1" class="South America">Colombia</option><option value="221" class="Africa">Congo</option><option value="132" class="Europe">Croatia</option><option value="79" class="North America">Cuba</option><option value="138" class="Asia">Cyprus</option><option value="142" class="Europe">Czech Republic</option><option value="143" class="Europe">Denmark</option><option value="11" class="Africa">Egypt</option><option value="156" class="Europe">Estonia</option><option value="109" class="Africa">Ethiopia</option><option value="157" class="Europe">Finland</option><option value="150" class="Europe">France</option><option value="151" class="Europe">Germany</option><option value="94" class="Africa">Ghana</option><option value="13" class="Europe">Greece</option><option value="144" class="Europe">Hungary</option><option value="86" class="Europe">Iceland</option><option value="163" class="Asia">India</option><option value="238" class="Asia">Indonesia</option><option value="173" class="Asia">Iran</option><option value="87" class="Europe">Ireland</option><option value="6" class="Asia">Israel</option><option value="133" class="Europe">Italy</option><option value="200" class="Asia">Japan</option><option value="8" class="Asia">Kazakhstan</option><option value="207" class="Africa">Kenya</option><option value="158" class="Europe">Latvia</option><option value="152" class="Europe">Liechtenstein</option><option value="159" class="Europe">Lithuania</option><option value="153" class="Europe">Luxembourg</option><option value="134" class="Europe">Macedonia</option><option value="218" class="Africa">Malawi</option><option value="102" class="Africa">Mali</option><option value="135" class="Europe">Malta</option><option value="58" class="North America">Mexico</option><option value="193" class="Asia">Myanmar</option><option value="225" class="Africa">Namibia</option><option value="249" class="Europe">Netherlands</option><option value="226" class="Oceania">New Zealand</option><option value="126" class="Africa">Niger</option><option value="127" class="Africa">Nigeria</option><option value="113" class="Europe">Norway</option><option value="43" class="South America">Peru</option><option value="189" class="Asia">Philippines</option><option value="145" class="Europe">Poland</option><option value="3" class="Europe">Portugal</option><option value="161" class="Europe">Romania</option><option value="9" class="Asia">Russian Federation</option><option value="208" class="Africa">Rwanda</option><option value="104" class="Africa">Senegal</option><option value="247" class="Europe">Serbia</option><option value="195" class="Asia">Singapore</option><option value="146" class="Europe">Slovakia</option><option value="147" class="Europe">Slovenia</option><option value="17" class="Africa">South Africa</option><option value="196" class="Asia">South Korea</option><option value="4" class="Europe">Spain</option><option value="167" class="Asia">Sri Lanka</option><option value="110" class="Africa">Sudan</option><option value="114" class="Europe">Sweden</option><option value="154" class="Europe">Switzerland</option><option value="209" class="Africa">Tanzania</option><option value="197" class="Asia">Thailand</option><option value="14" class="Asia">Turkey</option><option value="111" class="Africa">Uganda</option><option value="162" class="Europe">Ukraine</option><option value="91" class="Europe">United Kingdom</option><option value="15" class="North America">United States</option><option value="44" class="South America">Uruguay</option><option value="27" class="South America">Venezuela</option><option value="198" class="Asia">Vietnam</option><option value="115" class="Asia">West Bank</option>
+   </select>
+
+  </td>
+ </tr>
+ <tr>
+ <td></td>
+  <td>
+
+   <select name="faculty" onchange="updatemap(document.getElementById('filterform'));">
+    <option value="0">All Faculties</option>
+    <option value="4">Faculty of Arts and Humanities</option><option value="6">Faculty of Human Sciences</option><option value="2">Faculty of Law</option><option value="1">Faculty of Management, Economics and Social Sciences</option><option value="5">Faculty of Mathematics and Natural Sciences</option><option value="3">Faculty of Medicine</option>   </select>
+
+
+   <select name="type" onchange="updatemap(document.getElementById('filterform'));">
+    <option value="all">All types</option>
+    <option value="erasmus">International exchange</option>
+    <option value="official">Official partner</option>
+    <option value="office">International office</option>
+    <option value="faccoop">Faculty partnership</option>
+    <option value="third">Third party funding</option>
+   </select>
+
+  </td>
+ </tr>
+ <tr>
+  <td>Search:</td>
+  <td>
+   <input type="text" name="searchstring" onkeyup="updatemap(document.getElementById('filterform'));"/>
+  </td>
+ </tr>
+</table>
+</form>
+
+</div>
+    <div id="info"></div>
+  </body>
+</html>
