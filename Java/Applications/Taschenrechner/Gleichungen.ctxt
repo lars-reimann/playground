@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=a\ b\ c
-comment0.target=void\ LineareGleichungen(double,\ double,\ double)
-comment0.text=\nForm\ \:\ ax\ +\ b\ \=\ c\n\n
-comment1.params=a\ b\ c\ d
-comment1.target=void\ QuadratischeGleichungen(double,\ double,\ double,\ double)
-comment1.text=\nForm\:\ ax\u00B2\ +\ bx\ +\ c\ \=\ d\n\n
-numComments=2

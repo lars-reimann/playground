@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=ChessConstants()
-comment0.text=\n\ Dieser\ private\ Konstruktor\ verhindert\ die\ Instanziierung\ dieser\n\ Hilfsklasse.\ Da\ sie\ lediglich\ Konstanten\ enthaelt,\ ist\ es\ nicht\ noetig,\n\ Instanzen\ zu\ erzeugen.\ Sonst\ hat\ der\ Konstruktor\ keine\ weiteren\n\ Funktionen.\n
-numComments=1

@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=Start()
-comment0.text=\n\ Verhindert,\ dass\ weitere\ Instanzen\ der\ Klasse\ {@code\ Start}\ erzeugt\n\ werden\ koennen.\ Sonst\ hat\ der\ Konstruktor\ keine\ weitere\ Funktionalitaet.\n
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-comment1.text=\n\ Dient\ als\ Einstiegspunkt\ in\ das\ Programm.\ Es\ wird\ ein\ neues\ Fenster\n\ erzeugt,\ welches\ die\ weiteren\ Aufgaben\ ausfuehrt.\n\ \n\ @param\ args\n\ \ \ \ \ \ \ \ \ \ \ \ Der\ Standardparameter\ der\ main-Methode.\n
-numComments=2

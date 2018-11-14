@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.params=args
-comment0.target=void\ main(java.lang.String[])
-comment0.text=\n\ Fragt\ den\ Nutzer\ nach\ der\ Anzahl\ der\ Dreicke,\ aus\ denen\ der\ Weihnachtsbaum\n\ bestehen\ soll.\n\ Anschliessend\ wird\ der\ Baum\ auf\ der\ Konsole\ ausgegeben.\n\ \n\ @param\ args\ Standardparameter\n
-numComments=1

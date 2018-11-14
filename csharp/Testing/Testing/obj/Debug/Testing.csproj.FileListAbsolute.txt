@@ -1,5 +1,0 @@
-C:\Users\Lars\Desktop\playground\csharp\Testing\Testing\bin\Debug\Testing.exe
-C:\Users\Lars\Desktop\playground\csharp\Testing\Testing\bin\Debug\Testing.pdb
-C:\Users\Lars\Desktop\playground\csharp\Testing\Testing\obj\Debug\Testing.csprojResolveAssemblyReference.cache
-C:\Users\Lars\Desktop\playground\csharp\Testing\Testing\obj\Debug\Testing.exe
-C:\Users\Lars\Desktop\playground\csharp\Testing\Testing\obj\Debug\Testing.pdb

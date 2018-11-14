@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.params=chessboard
-comment0.target=MyActionListener(Chessboard)
-comment0.text=\n\ Konstruiert\ eine\ neue\ Instanz\ dieser\ Klasse\ und\ weist\ dem\ Feld\ chessboard\n\ die\ entsprechende\ Instanz\ der\ Klasse\ {@code\ Chessboard}\ zu.\n\ \n\ @param\ chessboard\n\ \ \ \ \ \ \ \ \ \ \ \ Die\ Instanz\ der\ Klasse\ {@code\ Chessboard}.\n
-comment1.params=event
-comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=2
