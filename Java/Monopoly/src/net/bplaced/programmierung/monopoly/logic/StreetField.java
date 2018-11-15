@@ -1,9 +1,9 @@
 package net.bplaced.programmierung.monopoly.logic;
 
 /**
- * Ein Stra&szlig;enfeld, das gekauft werden und auf dem H&auml;ser gebaut
- * werden k&ouml;nnen. Die Miete ist abh&auml;ngig von der Anzahl der H&auml;ser
- * und der Anzahl der besessen H&auml;ser in dieser Gruppe.
+ * Ein Straßenfeld, das gekauft werden und auf dem Häuser gebaut
+ * werden können. Die Miete ist abhängig von der Anzahl der Häuser
+ * und der Anzahl der besessen Häuser in dieser Gruppe.
  * 
  * @version 12. Februar 2011
  * @author Lars Reimann
@@ -16,18 +16,18 @@ public class StreetField extends AbstractBuyable {
     private final int housePrice;
 
     /**
-     * Die Anzahl der H&auml;ser auf diesem Feld.
+     * Die Anzahl der Häuser auf diesem Feld.
      */
     private int housesCount;
 
     /**
-     * Die Mieten, die f&auml;llig werden, wenn ein Spieler auf dieses Feld
-     * kommt, dem es nicht geh&ouml;rt.
+     * Die Mieten, die fällig werden, wenn ein Spieler auf dieses Feld
+     * kommt, dem es nicht gehört.
      */
     private Rent rent;
 
     /**
-     * Erstellt ein neues Stra&szlig;enfeld mit den &uuml;bergebenen Werten.
+     * Erstellt ein neues Straßenfeld mit den übergebenen Werten.
      * 
      * @param name
      *            Der Name des Feldes.
